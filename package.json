@@ -1,0 +1,28 @@
+{
+  "name": "bulletin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha --"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "debug": "^2.6.8",
+    "express": "^4.15.2",
+    "method-override": "^2.3.9",
+    "morgan": "^1.8.1",
+    "mssql": "^4.0.4",
+    "urlencode": "^1.1.0",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.2"
+  }
+}
