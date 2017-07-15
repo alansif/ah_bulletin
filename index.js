@@ -30,10 +30,9 @@ app.all('*', function(req, res, next) {
 });
 
 
-//const sqlstring = 'select DISTINCT TB_CR_Customer.Customer_dId as wsn, convert(varchar(20), TB_CR_Customer.Customer_dCheckDate, 23) as date, PLC.dbo.ZZ_PdfOnCloudLog.subject as subject from TB_CR_Customer,PLC.dbo.ZZ_PdfOnCloudLog where TB_CR_Customer.Customer_sIdNumber=@id and TB_CR_Customer.Customer_dId = PLC.dbo.ZZ_PdfOnCloudLog.wkst order by TB_CR_Customer.Customer_dId DESC';
 sql_carousel = 'select uid,title from ZZ_Bulletin where state = 2';
-sql_summary = 'select uid,title,issuedate from ZZ_Bulletin where state > 0';
-sql_detail = 'select title,body,issuedate,issuer from ZZ_Bulletin where uid=@id';
+sql_summary = 'select uid,title,issuedate,category from ZZ_Bulletin where state > 0 order by issuedate desc';
+sql_detail = 'select title,body,issuedate from ZZ_Bulletin where uid=@id';
 
 app.get('/api/v1/bulletin/carousel', function(req, res) {
     pool253.request().query(sql_carousel, (err, result)=>{
